@@ -1,4 +1,4 @@
-//Імпорт необхідних нам функцій
+package ПР1_ТВ13_РоманінАО//Імпорт необхідних нам функцій
 import kotlin.math.roundToInt
 import java.math.BigDecimal
 import java.math.RoundingMode
