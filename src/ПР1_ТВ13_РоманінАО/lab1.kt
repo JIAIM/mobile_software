@@ -64,14 +64,14 @@ fun task1(){
      якщо наступна цифра після заокруглюваної більше або дорівнює 5, число збільшується на 1.
      Після заокруглення значення перетворюється на тип Double.*/
     //Розрахуємо нижчу теплоту згорання
-    val QpH = BigDecimal((339 * Cp + 1030 * Hp - 108.8 * (Op - Sp) - 25 * W)).setScale(2, RoundingMode.HALF_UP).toDouble()
+    val QpH = BigDecimal((339 * Cp + 1030 * Hp - 108.8 * (Op - Sp) - 25 * W)).setScale(2, RoundingMode.HALF_UP).toDouble()/1000
     //Перерахуємо дану теплоту на суху масу
-    val QcH = BigDecimal((QpH + 0.025 * W) * (100 / (100 - W))).setScale(2, RoundingMode.HALF_UP).toDouble()
+    val QcH = BigDecimal((QpH + 0.025 * W) * 100 / (100 - W)).setScale(2, RoundingMode.HALF_UP).toDouble()
     //Перерахуємо дану теплоту на горючу масу
     val QgH = BigDecimal((QpH + 0.025 * W) * (100 / (100 - W - Ap))).setScale(2, RoundingMode.HALF_UP).toDouble()
 
     //Виведемо наші результати
-    println("Task #1\nQpH: $QpH кДж, QcH: $QcH кДж, QgH: $QgH кДж\n")
+    println("Task #1\nQpH: $QpH MДж, QcH: $QcH MДж, QgH: $QgH MДж\n")
 }
 
 fun task2(){
@@ -87,12 +87,14 @@ fun task2(){
     val Cg = 11.2
     val Og = 0.8
     val Sg = 2.5
-    val QgH = 40400
+    val QgH = 40.4
     val W = 2.0
     val A = 0.15
     val Vg = 333.3
+
     //Обчислимо коєфіцієнт
     val kef = (100 - W - A)/100
+
     //Вирахуємо нові дані для елементарного складу
     val Hp = Hg * kef
     val Cp = Cg * kef
@@ -100,10 +102,11 @@ fun task2(){
     val Op = Og * kef
     val Ap = A * kef
     val Vp = Vg * kef
+
     //Перерахуємо нижчу теплота згоряння мазуту
     val QpH = BigDecimal(QgH*kef - 0.025*W).setScale(2, RoundingMode.HALF_UP).toDouble()
     //Виведемо наші результати
-    println("Task #2\nQgh: $QgH кДж, QpH: $QpH кДж")
+    println("Task #2\nQgh: $QgH МДж, QpH: $QpH МДж")
     println("Елементарний склад:\nВуглець: $Hp\nВодень: $Cp\nКисень: $Op\nСірка: $Sp\nЗола: $Ap\nВанадій: $Vp")
 }
 
