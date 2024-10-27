@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/inputPc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Середньодобова потужність Pc (МВт)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/inputSigma1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputPc"
+        android:layout_marginTop="8dp"
+        android:hint="Сигма1 (МВт)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/inputSigma2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputSigma1"
+        android:layout_marginTop="8dp"
+        android:hint="Сигма2 (МВт)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/inputVartist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputSigma2"
+        android:layout_marginTop="8dp"
+        android:hint="Вартість електроенергії (грн/кВт*год)"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputVartist"
+        android:layout_marginTop="16dp"
+        android:text="Розрахувати" />
+
+    <TextView
+        android:id="@+id/resultSigma1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calculateButton"
+        android:layout_marginTop="16dp"
+        android:text="Прибуток для системи 1 ="
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/resultSigma2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resultSigma1"
+        android:layout_marginTop="8dp"
+        android:text="Прибуток для вдосконаленої системи 2 ="
+        android:textSize="16sp" />
+
+</RelativeLayout>
