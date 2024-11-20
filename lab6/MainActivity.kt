@@ -66,7 +66,7 @@ fun CalculatorApp() {
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("Рассчитать")
+            Text("Розрахувати")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -178,7 +178,6 @@ fun calculateTable(Pn: Int, Kv: Double, tgphi: Double): List<List<String>> {
     val all_Sp = round(sqrt(all_Pp*all_Pp+all_Qp*all_Qp))
     val all_Ip = round(all_Pp/Un)
 
-    // Составляем таблицу
     val table = mutableListOf<List<String>>()
     for (i in n_data.indices) {
         table.add(
